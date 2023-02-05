@@ -1,2 +1,4 @@
 # JUCE-Delay-PlugIn
-A basic Delay VST PlugIn in C++ with a wet/dry control, a feedback option and a time option
+A basic Delay VST PlugIn in C++
+
+The delay has a dry/wet control and a feedback and time control
