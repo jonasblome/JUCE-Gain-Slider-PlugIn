@@ -1,4 +1,4 @@
-# JUCE-Delay-PlugIn
-A basic Delay VST PlugIn in C++
+# JUCE-Gain-PlugIn
+A basic Gain Slider PlugIn in C+
 
-The delay has a dry/wet control and a feedback and time control
+A circular slider for gain control programmed in JUCE
