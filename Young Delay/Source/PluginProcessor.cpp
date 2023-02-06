@@ -22,6 +22,9 @@ YoungDelayAudioProcessor::YoungDelayAudioProcessor()
                        )
 #endif
 {
+    addParameter(mGainParameter = new juce::AudioParameterFloat("gain", "Gain", 0.0f, 1.0f, 0.5f));
+    
+    mGainSmoothed = mGainParameter->get();
 }
 
 YoungDelayAudioProcessor::~YoungDelayAudioProcessor()
@@ -150,11 +153,15 @@ void YoungDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+    auto* channelLeft = buffer.getWritePointer(0);
+    auto* channelRight = buffer.getWritePointer(1);
 
-        // ..do something to the data...
+    for (int sample = 0; sample < buffer.getNumSamples(); sample++)
+    {
+        mGainSmoothed = mGainSmoothed - 0.004 * (mGainSmoothed - mGainParameter->get());
+        
+        channelLeft[sample] *= mGainSmoothed;
+        channelRight[sample] *= mGainSmoothed;
     }
 }
 
@@ -166,7 +173,7 @@ bool YoungDelayAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* YoungDelayAudioProcessor::createEditor()
 {
-    return new YoungDelayAudioProcessorEditor (*this);
+    return new YoungDelayAudioProcessorEditor(*this);
 }
 
 //==============================================================================
