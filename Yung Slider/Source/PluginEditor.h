@@ -14,11 +14,11 @@
 //==============================================================================
 /**
 */
-class YoungDelayAudioProcessorEditor  : public juce::AudioProcessorEditor
+class YungSliderAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    YoungDelayAudioProcessorEditor (YoungDelayAudioProcessor&);
-    ~YoungDelayAudioProcessorEditor() override;
+    YungSliderAudioProcessorEditor (YungSliderAudioProcessor&);
+    ~YungSliderAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -29,7 +29,7 @@ private:
     
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    YoungDelayAudioProcessor& audioProcessor;
+    YungSliderAudioProcessor& audioProcessor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoungDelayAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YungSliderAudioProcessorEditor)
 };

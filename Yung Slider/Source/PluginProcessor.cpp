@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-YoungDelayAudioProcessor::YoungDelayAudioProcessor()
+YungSliderAudioProcessor::YungSliderAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -27,17 +27,17 @@ YoungDelayAudioProcessor::YoungDelayAudioProcessor()
     mGainSmoothed = mGainParameter->get();
 }
 
-YoungDelayAudioProcessor::~YoungDelayAudioProcessor()
+YungSliderAudioProcessor::~YungSliderAudioProcessor()
 {
 }
 
 //==============================================================================
-const juce::String YoungDelayAudioProcessor::getName() const
+const juce::String YungSliderAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool YoungDelayAudioProcessor::acceptsMidi() const
+bool YungSliderAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -46,7 +46,7 @@ bool YoungDelayAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool YoungDelayAudioProcessor::producesMidi() const
+bool YungSliderAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -55,7 +55,7 @@ bool YoungDelayAudioProcessor::producesMidi() const
    #endif
 }
 
-bool YoungDelayAudioProcessor::isMidiEffect() const
+bool YungSliderAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -64,50 +64,50 @@ bool YoungDelayAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double YoungDelayAudioProcessor::getTailLengthSeconds() const
+double YungSliderAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int YoungDelayAudioProcessor::getNumPrograms()
+int YungSliderAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int YoungDelayAudioProcessor::getCurrentProgram()
+int YungSliderAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void YoungDelayAudioProcessor::setCurrentProgram (int index)
+void YungSliderAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const juce::String YoungDelayAudioProcessor::getProgramName (int index)
+const juce::String YungSliderAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void YoungDelayAudioProcessor::changeProgramName (int index, const juce::String& newName)
+void YungSliderAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
 //==============================================================================
-void YoungDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void YungSliderAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void YoungDelayAudioProcessor::releaseResources()
+void YungSliderAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool YoungDelayAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool YungSliderAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     juce::ignoreUnused (layouts);
@@ -132,7 +132,7 @@ bool YoungDelayAudioProcessor::isBusesLayoutSupported (const BusesLayout& layout
 }
 #endif
 
-void YoungDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void YungSliderAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
@@ -166,25 +166,25 @@ void YoungDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
 }
 
 //==============================================================================
-bool YoungDelayAudioProcessor::hasEditor() const
+bool YungSliderAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-juce::AudioProcessorEditor* YoungDelayAudioProcessor::createEditor()
+juce::AudioProcessorEditor* YungSliderAudioProcessor::createEditor()
 {
-    return new YoungDelayAudioProcessorEditor(*this);
+    return new YungSliderAudioProcessorEditor(*this);
 }
 
 //==============================================================================
-void YoungDelayAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void YungSliderAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void YoungDelayAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void YungSliderAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -194,5 +194,5 @@ void YoungDelayAudioProcessor::setStateInformation (const void* data, int sizeIn
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new YoungDelayAudioProcessor();
+    return new YungSliderAudioProcessor();
 }

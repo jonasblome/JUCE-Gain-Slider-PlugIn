@@ -8,11 +8,11 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.YoungDelay</string>
+    <string>com.Blome.YungSlider</string>
     <key>CFBundleName</key>
-    <string>Young Delay</string>
+    <string>Yung Slider</string>
     <key>CFBundleDisplayName</key>
-    <string>Young Delay</string>
+    <string>Yung Slider</string>
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleSignature</key>

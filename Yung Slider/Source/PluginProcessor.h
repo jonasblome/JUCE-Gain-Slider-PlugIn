@@ -13,15 +13,15 @@
 //==============================================================================
 /**
 */
-class YoungDelayAudioProcessor  : public juce::AudioProcessor
+class YungSliderAudioProcessor  : public juce::AudioProcessor
                             #if JucePlugin_Enable_ARA
                              , public juce::AudioProcessorARAExtension
                             #endif
 {
 public:
     //==============================================================================
-    YoungDelayAudioProcessor();
-    ~YoungDelayAudioProcessor() override;
+    YungSliderAudioProcessor();
+    ~YungSliderAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -60,5 +60,5 @@ private:
     juce::AudioParameterFloat* mGainParameter;
     float mGainSmoothed;
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoungDelayAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YungSliderAudioProcessor)
 };

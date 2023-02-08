@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="o0cuov" name="Young Delay" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
-  <MAINGROUP id="eHpwd9" name="Young Delay">
+<JUCERPROJECT id="o0cuov" name="Yung Slider" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="Blome">
+  <MAINGROUP id="eHpwd9" name="Yung Slider">
     <GROUP id="{B39008B4-18E7-CCC7-E5C4-792F83DDB9AD}" name="Source">
       <FILE id="bdAMIV" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

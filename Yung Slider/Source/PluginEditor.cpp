@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-YoungDelayAudioProcessorEditor::YoungDelayAudioProcessorEditor (YoungDelayAudioProcessor& p)
+YungSliderAudioProcessorEditor::YungSliderAudioProcessorEditor (YungSliderAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -38,18 +38,18 @@ YoungDelayAudioProcessorEditor::YoungDelayAudioProcessorEditor (YoungDelayAudioP
     addAndMakeVisible(mGainControlSlider);
 }
 
-YoungDelayAudioProcessorEditor::~YoungDelayAudioProcessorEditor()
+YungSliderAudioProcessorEditor::~YungSliderAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void YoungDelayAudioProcessorEditor::paint (juce::Graphics& g)
+void YungSliderAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 }
 
-void YoungDelayAudioProcessorEditor::resized()
+void YungSliderAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
